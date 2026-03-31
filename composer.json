@@ -1,0 +1,21 @@
+{
+	"name": "innohub/deployer-recipes",
+	"description": "Deployer recipes",
+	"prefer-stable": true,
+	"require": {
+		"ext-mysqli": "*",
+		"ext-json": "*",
+		"composer/semver": "^3.0",
+		"deployer/deployer": "^7.3"
+	},
+	"require-dev": {
+	},
+	"autoload": {
+		"psr-4": {
+			"InnoHub\\DeployerRecipes\\": "src/"
+		},
+		"files": [
+			"autoload.php"
+		]
+	}
+}

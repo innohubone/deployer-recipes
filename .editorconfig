@@ -1,0 +1,39 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.json]
+indent_style = tab
+
+# ReST-Files
+[{*.rst,*.rst.txt}]
+max_line_length = 80
+
+[{*.html,*.xml,*.xlf}]
+indent_style = tab
+
+[*.sql]
+indent_style = tab
+
+[{_.htaccess,.htaccess}]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{*.yaml,*.yml}]
+ij_yaml_block_mapping_on_new_line = true
+
+[*.neon]
+indent_style = tab

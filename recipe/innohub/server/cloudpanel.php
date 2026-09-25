@@ -10,7 +10,7 @@ require 'recipe/innohub/server/nginx.php';
 // Deploy to a CloudPanel site as its site user (= SSH user = PHP-FPM pool user), which has no sudo by default.
 //
 // Required per host:
-//   ->set('php_version', '8.4')                 // must be set on the host, results in `bin/php` = /usr/bin/php8.4
+//   ->set('php_version', '8.5')                 // must be set on the host, results in `bin/php` = /usr/bin/php8.5
 //   ->set('cloudpanel/php_fpm_port', <port>)    // see vhost of the site: `fastcgi_pass 127.0.0.1:<port>;`
 //   ->set('deploy_path', '/home/<site user>/htdocs/<domain>')
 //

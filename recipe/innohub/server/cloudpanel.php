@@ -11,7 +11,7 @@ require 'recipe/innohub/server/nginx.php';
 //
 // Required per host:
 //   ->set('php_version', '8.5')                 // must be set on the host, results in `bin/php` = /usr/bin/php8.5
-//   ->set('cloudpanel/php_fpm_port', <port>)    // see vhost of the site: `fastcgi_pass 127.0.0.1:<port>;`
+//   ->set('cloudpanel/php_fpm_port', <port>)    // see /etc/nginx/sites-enabled/<domain>.conf: `fastcgi_pass 127.0.0.1:<port>;`
 //   ->set('deploy_path', '/home/<site user>/htdocs/<domain>')
 //
 // One-time setup per site in CloudPanel:
@@ -21,7 +21,7 @@ require 'recipe/innohub/server/nginx.php';
 //     fastcgi_param DOCUMENT_ROOT $realpath_root;
 // - Root Directory: `<domain>/current/public`, set it after the first deployment (`deploy:setup` fails, if `current` exists as a real directory)
 // - Only if the project ships nginx configs in `config/nginx/*.conf`:
-//     Vhost (server block): include /home/<site user>/htdocs/<domain>/nginx/*.conf;
+//     Vhost (server block, before `location ~ \.php$`): include /home/<site user>/htdocs/<domain>/nginx/*.conf;
 //     /etc/sudoers.d/…:     <site user> ALL=(root) NOPASSWD: /usr/sbin/nginx -t, /usr/bin/systemctl reload nginx
 
 // The site user owns all files, so there is no need for ACLs or chown
